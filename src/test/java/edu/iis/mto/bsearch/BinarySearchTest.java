@@ -39,4 +39,12 @@ public class BinarySearchTest {
 
         assertEquals(seq.length, searchResult.getPosition());
     }
+
+    @Test
+    public void isMiddleElementInOddSequence() {
+        seq = new int[] {4, 8, 12, 16, 20};
+        searchResult = BinarySearch.search(12, seq);
+
+        assertEquals(seq.length / 2 + 1, searchResult.getPosition());
+    }
 }
