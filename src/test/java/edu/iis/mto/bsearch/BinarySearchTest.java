@@ -15,4 +15,12 @@ public class BinarySearchTest {
 
         assertTrue(searchResult.isFound());
     }
+
+    @Test
+    public void cannotFindElementInSingleSequence() {
+        seq = new int[] {2};
+        searchResult = BinarySearch.search(4, seq);
+
+        assertFalse(searchResult.isFound());
+    }
 }
