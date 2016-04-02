@@ -1,6 +1,7 @@
 package edu.iis.mto.bsearch;
 
 import org.junit.Test;
+import static org.hamcrest.Matchers.is;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +14,7 @@ public class BinarySearchTest {
         seq = new int[] {4};
         searchResult = BinarySearch.search(4, seq);
 
-        assertTrue(searchResult.isFound());
+        assertThat(searchResult.isFound(), is(true));
     }
 
     @Test
@@ -21,7 +22,7 @@ public class BinarySearchTest {
         seq = new int[] {2};
         searchResult = BinarySearch.search(4, seq);
 
-        assertFalse(searchResult.isFound());
+        assertThat(searchResult.isFound(), is(false));
     }
 
     @Test
@@ -29,7 +30,7 @@ public class BinarySearchTest {
         seq = new int[] {2, 5, 7};
         searchResult = BinarySearch.search(2, seq);
 
-        assertEquals(1, searchResult.getPosition());
+        assertThat(searchResult.getPosition(), is(1));
     }
 
     @Test
@@ -37,7 +38,7 @@ public class BinarySearchTest {
         seq = new int[] {4, 8, 12, 13, 15, 18};
         searchResult = BinarySearch.search(18, seq);
 
-        assertEquals(seq.length, searchResult.getPosition());
+        assertThat(searchResult.getPosition(), is(seq.length));
     }
 
     @Test
@@ -45,6 +46,6 @@ public class BinarySearchTest {
         seq = new int[] {4, 8, 12, 16, 20};
         searchResult = BinarySearch.search(12, seq);
 
-        assertEquals(seq.length / 2 + 1, searchResult.getPosition());
+        assertThat(searchResult.getPosition(), is(seq.length / 2 + 1));
     }
 }
