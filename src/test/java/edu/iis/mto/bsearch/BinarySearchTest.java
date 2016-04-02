@@ -31,4 +31,12 @@ public class BinarySearchTest {
 
         assertEquals(1, searchResult.getPosition());
     }
+
+    @Test
+    public void isLastElementInSequence() {
+        seq = new int[] {4, 8, 12, 13, 15, 18};
+        searchResult = BinarySearch.search(18, seq);
+
+        assertEquals(seq.length, searchResult.getPosition());
+    }
 }
