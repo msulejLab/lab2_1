@@ -23,4 +23,12 @@ public class BinarySearchTest {
 
         assertFalse(searchResult.isFound());
     }
+
+    @Test
+    public void isFirstElementInSequence() {
+        seq = new int[] {2, 5, 7};
+        searchResult = BinarySearch.search(2, seq);
+
+        assertEquals(1, searchResult.getPosition());
+    }
 }
