@@ -26,14 +26,6 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void isFirstElementInSequence() {
-        seq = new int[] {2, 5, 7};
-        searchResult = BinarySearch.search(2, seq);
-
-        assertThat(searchResult.getPosition(), is(1));
-    }
-
-    @Test
     public void isLastElementInSequence() {
         seq = new int[] {4, 8, 12, 13, 15, 18};
         searchResult = BinarySearch.search(18, seq);
@@ -63,5 +55,21 @@ public class BinarySearchTest {
         searchResult = BinarySearch.search(1, seq);
 
         assertThat(searchResult.isFound(), is(false));
+    }
+
+    @Test
+    public void isFirstElementInOddSequence() {
+        seq = new int[] {1, 2, 3, 4, 5, 6, 7};
+        searchResult = BinarySearch.search(1, seq);
+
+        assertThat(searchResult.getPosition(), is(1));
+    }
+
+    @Test
+    public void isFirstElementInEvenSequence() {
+        seq = new int[] {1, 2, 3, 4, 5, 6};
+        searchResult = BinarySearch.search(1, seq);
+
+        assertThat(searchResult.getPosition(), is(1));
     }
 }
